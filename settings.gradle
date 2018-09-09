@@ -1,0 +1,5 @@
+rootProject.name = 'testwarez-2018'
+include 'warehouse'
+include 'warehouse-contract'
+include 'product-service'
+include 'product-service-contract'

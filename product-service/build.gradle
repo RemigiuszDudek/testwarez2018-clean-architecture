@@ -1,0 +1,19 @@
+sourceCompatibility = 1.8
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('com.google.guava:guava:11.0.2')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.cloud:spring-cloud-starter-contract-verifier')
+    testCompile('org.springframework.security:spring-security-test')
+}
+
+repositories {
+    mavenCentral()
+}
+
+contracts {
+    baseClassForTests = 'prv.dudekre.warehouse.contract.OrderReceiverContractBase'
+    contractsDslDir = project.rootProject.file('order-receiver-contract/src/test/resources/contracts')
+}

@@ -1,0 +1,8 @@
+apply plugin: 'maven'
+apply plugin: 'groovy'
+
+configurations.archives.artifacts.clear()
+
+artifacts {
+    archives verifierStubsJar
+}

@@ -1,0 +1,35 @@
+sourceCompatibility = 1.8
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('com.google.guava:guava:11.0.2')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.cloud:spring-cloud-starter-contract-verifier')
+    testCompile('org.springframework.cloud:spring-cloud-starter-contract-stub-runner')
+    testCompile('org.springframework.security:spring-security-test')
+    testCompile 'com.tngtech.archunit:archunit-junit5-api:0.9.1'
+    testRuntime 'com.tngtech.archunit:archunit-junit5-engine:0.9.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+contracts {
+    baseClassForTests = 'prv.dudekre.warehouse.contract.WarehouseContractBase'
+    contractsDslDir = project.rootProject.file('warehouse-contract/src/test/resources/contracts')
+}
+
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+apply plugin: 'jdepend'
+
+checkstyle {
+    toolVersion "7.6.1"
+}
+
+pmd {
+    consoleOutput = true
+    ruleSetFiles = project.rootProject.files("config/pmd/ruleset.xml")
+}
