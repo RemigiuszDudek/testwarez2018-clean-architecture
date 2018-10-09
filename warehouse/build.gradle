@@ -27,6 +27,8 @@ apply plugin: 'jdepend'
 
 checkstyle {
     toolVersion "7.6.1"
+    configFile = project.rootProject.file("config/checkstyle/checkstyle.xml")
+    configProperties = [suppressionsFile: project.rootProject.file("config/checkstyle/suppressions.xml").absolutePath]
 }
 
 pmd {
