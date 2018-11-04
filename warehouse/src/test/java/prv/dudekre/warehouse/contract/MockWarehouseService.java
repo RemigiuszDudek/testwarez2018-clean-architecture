@@ -6,8 +6,8 @@ import prv.dudekre.warehouse.domain.Warehouse;
 
 import java.util.List;
 
-public class MockWarehouseService extends WarehouseService {
-    public MockWarehouseService(Warehouse warehouse, List<Product> products) {
+class MockWarehouseService extends WarehouseService {
+    MockWarehouseService(Warehouse warehouse, List<Product> products) {
         super(new MockWarehouseRepository(warehouse), new MockProductRepository(products));
     }
 }

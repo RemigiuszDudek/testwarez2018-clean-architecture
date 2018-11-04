@@ -3,10 +3,10 @@ package prv.dudekre.warehouse.contract;
 import prv.dudekre.warehouse.domain.Warehouse;
 import prv.dudekre.warehouse.domain.WarehouseRepository;
 
-public class MockWarehouseRepository implements WarehouseRepository {
+class MockWarehouseRepository implements WarehouseRepository {
     private Warehouse warehouse;
 
-    public MockWarehouseRepository(Warehouse warehouse) {
+    MockWarehouseRepository(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
 

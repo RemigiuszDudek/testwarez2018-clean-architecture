@@ -8,10 +8,10 @@ import java.util.Map;
 
 import static java.util.stream.Collectors.toMap;
 
-public class MockProductRepository implements ProductRepository {
+class MockProductRepository implements ProductRepository {
     private final Map<String, Product> products;
 
-    public MockProductRepository(List<Product> products) {
+    MockProductRepository(List<Product> products) {
         this.products = products.stream()
                 .collect(toMap(Product::getId, product -> product));
     }
